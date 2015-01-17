@@ -18,6 +18,7 @@
 #include <random>
 #include <unordered_map>
 #include <functional>
+#include <atomic>
 
 #include "Log.h"
 #include "consts.h"

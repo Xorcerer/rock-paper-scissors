@@ -4,7 +4,7 @@
 
 None.
 
-## Time Elepsed
+## Time Elapsed
 
 See: Development Story
 

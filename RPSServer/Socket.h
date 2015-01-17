@@ -1,7 +1,5 @@
 #pragma once
 
-#include <WinSock2.h>
-
 
 namespace nwayinterview
 {
@@ -9,8 +7,7 @@ namespace nwayinterview
 	{
 	public:
 		Socket(SOCKET socket) :
-			ref_count_(1),
-			socket_fd_(socket)
+			handle_(socket)
 		{
 		}
 
@@ -18,14 +15,11 @@ namespace nwayinterview
 
 		void Close();
 
-		void AddRef();
-		void Release();
-
-		SOCKET get_socket() const { return socket_fd_; }
+		SOCKET get_socket() const { return handle_; }
 
 	private:
-		unsigned int ref_count_;
-		SOCKET socket_fd_;
+		SOCKET handle_;
+		std::atomic<bool> closed_;
 	};
 
 }
