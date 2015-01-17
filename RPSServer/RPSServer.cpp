@@ -49,6 +49,8 @@ size_t handle_request(GameLogic &logic, SelectServer &server, SOCKET s, char con
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	const unsigned int PORT = 10010;
+
 	auto has_params = [&](_TCHAR const *param_str)
 	{
 		return std::any_of(&argv[1], &argv[argc], [&](_TCHAR *arg) { return std::wstring(arg) == param_str; });
@@ -76,7 +78,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		return len;
 	};
 
-	std::thread select_server_thread([&]() { server.loop(10010, enqueue_consumer); });
+	std::thread select_server_thread([&]() { server.loop(PORT, enqueue_consumer); });
 	
 	select_server_thread.join();
 	
