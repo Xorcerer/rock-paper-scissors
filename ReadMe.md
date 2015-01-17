@@ -4,7 +4,7 @@
 
 None.
 
-## Time Elepsed
+## Time Elapsed
 
 See: Development Story
 
@@ -15,6 +15,13 @@ See: Development Story
     which are required by the test.
 * Listens on 10010, hard coded.
 * The client should be launched after server, for now, no retry mechanism.
+
+## Things Could be enhanced.
+
+* Shutdown server gracefully.
+* Configuration of port and log file.
+* Multi-threads for handling different sessions.
+* Client retry on connection failed.
 
 ## Coding style
 
