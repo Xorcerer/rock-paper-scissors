@@ -48,10 +48,16 @@ using namespace nwayinterview;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	SOCKET s = ::connect_to("127.0.0.1", 10010);
-	if (s == INVALID_SOCKET)
-		return -1;
+	unsigned short const PORT = 10010;
+	std::cout << "Connecting to localhost: " << PORT << std::endl;
 
+	SOCKET s;
+	while ((s = ::connect_to("127.0.0.1", PORT)) == INVALID_SOCKET)
+	{
+		std::cout << "Failed to connect server, retry in 3 second..." << std::endl;
+		::Sleep(3 * 1000);
+	}
+	
 	char buffer[DATA_BUFSIZE];
 
 	int selection;

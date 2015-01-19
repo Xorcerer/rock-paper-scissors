@@ -42,9 +42,6 @@
     <ClInclude Include="Log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Socket.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SelectServer.h">
       <Filter>Header Files</Filter>
     </ClInclude>

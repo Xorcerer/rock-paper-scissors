@@ -8,25 +8,28 @@ None.
 
 See: Development Story
 
-## Server Design
+## Design
 
+* Message passing: client <-> tcp server (using `select`) <-> glue function <-> game logic.
 * The Server is a single thread process, using select to process incoming packages.
 * Logging to file "sessions.log" (for tcp related stuff) and "server.log" (for game logic related),
     which are required by the test.
 * Listens on 10010, hard coded.
-* The client should be launched after server, for now, no retry mechanism.
+* Client connect to 127.0.0.1:10010, hard coded.
 
 ## Things Could be enhanced.
 
 * Shutdown server gracefully.
 * Configuration of port and log file.
 * Multi-threads for handling different sessions.
-* Client retry on connection failed.
 
 ## Coding style
 
   [Google C++ style](http://google-styleguide.googlecode.com/svn/trunk/cppguide.html)
 
+  Except:
+  * The function naming, will always be "word_splitted_by_underscore".
+ 
 
 ## References
 

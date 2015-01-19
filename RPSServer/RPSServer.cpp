@@ -10,7 +10,7 @@
 
 using namespace nwayinterview;
 
-
+// A glue function as a bridge between logic and io.
 size_t handle_request(GameLogic &logic, SelectServer &server, SOCKET s, char const * const buffer, size_t len)
 {
 	if (len == 0)
